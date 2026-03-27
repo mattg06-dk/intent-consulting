@@ -342,8 +342,8 @@ function Philosophy() {
           Most AI consultants sell you tools you don't need and projects that drag on for months.
         </p>
         <h2 className="phil-text text-4xl md:text-7xl font-sans font-bold tracking-tighter leading-tight">
-          <span className="bg-accent/15 px-3 py-1 rounded-lg">You work with a person,</span> <br />
-          <span className="font-serif text-accent font-normal">not a platform.</span>
+          <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">You work with a person,</span> <br />
+          <span className="font-serif text-accent font-normal px-4 py-3">not a platform.</span>
         </h2>
         <div className="phil-text flex flex-col gap-8 max-w-2xl">
           <div>
