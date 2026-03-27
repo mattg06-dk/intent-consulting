@@ -300,7 +300,7 @@ function Features() {
         </div>
 
         <p className="mt-24 mb-12 text-center text-2xl md:text-3xl font-medium text-dark max-w-3xl mx-auto leading-relaxed">
-          And once the basics are running? We'll show you what else AI can do — from finding new clients to spotting opportunities you didn't know were there.
+          <strong>And once the basics are running? We'll show you what else AI can do — from finding new clients to spotting opportunities you didn't know were there.</strong>
         </p>
       </div>
     </section>
