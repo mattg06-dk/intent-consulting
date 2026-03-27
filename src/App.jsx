@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { ArrowRight, Check, Search, Map, Rocket } from 'lucide-react';
+import { ArrowRight, Check, MessageCircle, Map, Wrench, Handshake } from 'lucide-react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -39,12 +39,12 @@ function Navbar() {
           <a href="#philosophy" className="hover:opacity-100 transition-opacity">Our approach</a>
           <a href="#protocol" className="hover:opacity-100 transition-opacity">How it works</a>
         </div>
-        <button className={cn(
+        <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" className={cn(
           "magnetic-btn text-sm font-semibold px-5 py-2 rounded-full",
           scrolled ? "bg-accent text-white" : "bg-dark text-white"
         )}>
-          <span>Free review</span>
-        </button>
+          <span>Book a free call</span>
+        </a>
       </div>
     </nav>
   );
@@ -75,20 +75,21 @@ function Hero() {
 
   return (
     <section ref={heroRef} className="relative w-full pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-16 bg-background">
-      <div className="max-w-5xl mx-auto flex flex-col items-start space-y-4">
-        <h1 className="flex flex-col text-dark">
-          <span ref={text1Ref} className="text-4xl md:text-6xl font-sans font-bold tracking-tight mb-2 md:mb-3 ml-1">
-            We make things better.
-          </span>
-          <span ref={text2Ref} className="text-[8vw] leading-[1] md:text-7xl font-serif tracking-tighter text-accent">
-            with Intent.
-          </span>
+      <div className="max-w-5xl mx-auto flex flex-col items-start space-y-6">
+        <h1 ref={text1Ref} className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-dark max-w-3xl">
+          You didn't start a business to spend your days on admin.
         </h1>
-        <div ref={btnRef} className="pt-6">
-          <button className="magnetic-btn bg-dark text-white px-8 py-4 rounded-full flex items-center gap-3">
-            <span className="font-semibold">Get a free review</span>
+        <p ref={text2Ref} className="text-lg md:text-xl font-sans text-dark/60 max-w-2xl leading-relaxed">
+          We look at how you actually work, find the things that are eating your time, and set up AI that handles them for you.
+        </p>
+        <div ref={btnRef} className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-accent text-white px-8 py-4 rounded-full flex items-center gap-3">
+            <span className="font-semibold">Book a free call</span>
             <ArrowRight size={18} />
-          </button>
+          </a>
+          <a href="#features" className="text-sm font-medium text-dark/50 hover:text-dark transition-colors">
+            See what we actually do ↓
+          </a>
         </div>
       </div>
     </section>
@@ -100,9 +101,9 @@ function Hero() {
 // ----------------------
 function ToolChecklist() {
   const items = [
-    { title: 'Daily briefings', desc: 'What you need to know, every morning.' },
-    { title: 'Live reports', desc: 'Numbers that update themselves.' },
-    { title: 'Task automation', desc: 'Routine jobs, handled.' }
+    { title: 'Business overview', desc: 'What you need to know, without digging for it.' },
+    { title: 'Live numbers', desc: 'Always up to date. No spreadsheet wrangling.' },
+    { title: 'Automatic reminders', desc: 'Follow-ups and check-ins that happen on their own.' }
   ];
   const [active, setActive] = useState(0);
 
@@ -116,8 +117,8 @@ function ToolChecklist() {
   return (
     <div className="feature-card p-8 h-[380px] flex flex-col">
       <div>
-        <h3 className="text-xl heading-sans mb-1 text-dark">AI tools that help you run things</h3>
-        <p className="text-sm text-dark/60">Better info, faster decisions.</p>
+        <h3 className="text-xl heading-sans mb-1 text-dark">Know how your business is doing</h3>
+        <p className="text-sm text-dark/60">Without pulling it all together yourself every month.</p>
       </div>
       <div className="mt-auto flex flex-col gap-3">
         {items.map((item, i) => (
@@ -186,7 +187,7 @@ function TelemetryTypewriter() {
     <div className="feature-card p-8 h-[380px] flex flex-col">
       <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Stop doing the same thing twice</h3>
-        <p className="text-sm text-dark/60">Let AI handle the repetitive stuff.</p>
+        <p className="text-sm text-dark/60">We automate the repetitive stuff so you don't have to.</p>
       </div>
       <div className="mt-auto bg-primary/30 p-5 rounded-3xl h-36 border border-dark/5 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-2">
@@ -221,7 +222,7 @@ function WeekHighlighter() {
     <div className="feature-card p-8 h-[380px] flex flex-col">
       <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Find where you're losing time</h3>
-        <p className="text-sm text-dark/60">We spot the biggest time sinks first.</p>
+        <p className="text-sm text-dark/60">You're spending more time running the business than doing the work you're good at.</p>
       </div>
       <div className="mt-auto w-full border border-dark/5 rounded-3xl p-5 bg-primary/20">
         <div className="flex items-end justify-between gap-2 h-24 mb-3">
@@ -283,16 +284,24 @@ function Features() {
   return (
     <section id="features" ref={sectionRef} className="py-24 px-6 md:px-16 bg-background text-dark">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-16 text-center max-w-2xl mx-auto">
-          We find what's slowing you down. <br/>
-          <span className="text-accent font-serif font-normal">Then we fix it.</span>
-        </h2>
+        <div className="mb-16 text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">
+            What we actually do
+          </h2>
+          <p className="text-lg text-dark/60 leading-relaxed">
+            Every business is different. We start by understanding how yours actually runs — then we figure out where AI helps and where it doesn't.
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ToolChecklist />
           <TelemetryTypewriter />
           <WeekHighlighter />
         </div>
+
+        <p className="mt-24 mb-12 text-center text-2xl md:text-3xl font-medium text-dark max-w-3xl mx-auto leading-relaxed">
+          And once the basics are running? We'll show you what else AI can do — from finding new clients to spotting opportunities you didn't know were there.
+        </p>
       </div>
     </section>
   );
@@ -330,13 +339,26 @@ function Philosophy() {
       
       <div ref={textContainerRef} className="relative z-10 max-w-4xl mx-auto flex flex-col items-start gap-12">
         <p className="phil-text text-xl md:text-2xl font-mono text-white/50 tracking-tight max-w-2xl">
-          Most AI consultants try to sell you tools you don't need and projects that drag on for months.
+          Most AI consultants sell you tools you don't need and projects that drag on for months.
         </p>
         <h2 className="phil-text text-4xl md:text-7xl font-sans font-bold tracking-tighter leading-tight">
-          We focus on: <br />
-          <span className="font-serif text-accent font-normal pr-4">real results </span>
-          <span>— less busywork, <br/> more time for what matters.</span>
+          <span className="bg-accent/15 px-3 py-1 rounded-lg">You work with a person,</span> <br />
+          <span className="font-serif text-accent font-normal">not a platform.</span>
         </h2>
+        <div className="phil-text flex flex-col gap-8 max-w-2xl">
+          <div>
+            <h3 className="text-lg font-bold text-white mb-1">We speak human.</h3>
+            <p className="text-white/50">No jargon, no buzzwords. We tell you what we'll do, in plain English, and then we do it.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-white mb-1">We do the work.</h3>
+            <p className="text-white/50">This isn't advice you have to implement yourself. We build it, set it up, and make sure it works.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-white mb-1">We're honest about what AI can't do.</h3>
+            <p className="text-white/50">If something doesn't need AI, we'll tell you. If a simpler solution exists, we'll suggest that instead.</p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -350,9 +372,10 @@ function Protocol() {
   const cardsRef = useRef([]);
 
   const steps = [
-    { num: '01', title: 'Free review', desc: 'We look at how your business runs day to day and find where AI can save you real time and money.', icon: Search },
-    { num: '02', title: 'Your plan', desc: 'We put together a clear plan for the AI tools that will actually make a difference, built around how your team works.', icon: Map },
-    { num: '03', title: 'Set up and training', desc: 'We get everything running, show your team how to use it, and make sure it works without getting in the way.', icon: Rocket }
+    { num: '01', title: 'Chat', desc: 'You tell us what\'s taking up your time, what\'s frustrating you, and what you wish just worked better. No questionnaires, no pre-work — just a straight talk about your business.', icon: MessageCircle },
+    { num: '02', title: 'Diagnosis', desc: 'We look at how your business actually runs — the tools you use, the tasks you repeat, the stuff that falls through the cracks. Then we tell you, honestly, what\'s worth fixing and what isn\'t.', icon: Map },
+    { num: '03', title: 'Build', desc: 'We set up the automations and AI tools that make the biggest difference — working systems, not strategy documents. Typically within two to five weeks.', icon: Wrench },
+    { num: '04', title: 'Handover', desc: 'We show you how everything works, make sure you\'re comfortable, and hand it over. If something breaks later, we\'re a call away. But the goal is to give you something that runs without us.', icon: Handshake }
   ];
 
   useEffect(() => {
@@ -416,15 +439,20 @@ function GetStarted() {
       <div className="max-w-4xl mx-auto container-border rounded-[3rem] bg-background p-12 md:p-24 text-center overflow-hidden relative shadow-sm">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
         <h2 className="text-4xl md:text-6xl font-sans font-bold tracking-tighter text-dark mb-6">
-          Ready to get <br/> <span className="font-serif text-accent font-normal">time back?</span>
+          Fancy getting some of <br/> <span className="font-serif text-accent font-normal">your time back?</span>
         </h2>
         <p className="text-lg text-dark/60 mx-auto max-w-lg mb-10">
-          Most businesses waste hours every week on work that AI could handle. We'll show you where.
+          No pitch deck, no pressure. Just a straight conversation about your business and whether we can help. If we can't, we'll tell you.
         </p>
-        <button className="magnetic-btn bg-dark text-white text-lg font-medium px-10 py-5 rounded-full inline-flex items-center gap-4">
-          <span>Get a free review</span>
-          <ArrowRight size={20} />
-        </button>
+        <div className="flex flex-col items-center gap-4">
+          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-dark text-white text-lg font-medium px-10 py-5 rounded-full inline-flex items-center gap-4">
+            <span>Book a free call</span>
+            <ArrowRight size={20} />
+          </a>
+          <a href="mailto:matt@intentconsulting.ai" className="text-sm text-dark/40 hover:text-dark/60 transition-colors underline underline-offset-4">
+            or just drop us a message
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -440,7 +468,7 @@ function Footer() {
         <div className="max-w-xs">
           <h4 className="text-2xl font-bold font-sans tracking-tight mb-4">Intent<span className="text-accent text-3xl">.</span></h4>
           <p className="text-white/50 text-sm font-sans">
-            We work with businesses to make things better and put AI where it actually helps.
+            AI consulting for small businesses. Based in the UK.
           </p>
         </div>
         
