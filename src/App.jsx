@@ -299,9 +299,12 @@ function Features() {
           <WeekHighlighter />
         </div>
 
-        <p className="mt-24 mb-12 text-center text-2xl md:text-3xl font-medium text-dark max-w-3xl mx-auto leading-relaxed">
-          <strong>And once the basics are running? We'll show you what else AI can do — from finding new clients to spotting opportunities you didn't know were there.</strong>
-        </p>
+        <div className="feat-card mt-24 mb-12 text-center max-w-3xl mx-auto">
+          <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
+          <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
+            We'll show you what else AI can do — from <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">finding new clients</span> to <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">spotting opportunities</span> you didn't know were there.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -342,7 +345,7 @@ function Philosophy() {
           Most AI consultants sell you tools you don't need and projects that drag on for months.
         </p>
         <h2 className="phil-text text-4xl md:text-7xl font-sans font-bold tracking-tighter leading-tight">
-          <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">You work with a person,</span> <br />
+          <span className="bg-accent text-white px-3 py-1 rounded-lg">You work with a person,</span> <br />
           <span className="font-serif text-accent font-normal px-4 py-3">not a platform.</span>
         </h2>
         <div className="phil-text flex flex-col gap-8 max-w-2xl">
