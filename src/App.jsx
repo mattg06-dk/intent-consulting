@@ -307,7 +307,7 @@ function Features() {
         <div className="feat-card mt-24 mb-12 max-w-3xl mx-auto text-center">
           <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
           <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
-            That's the foundation. After that, we build the things that actually <span className="bg-accent text-white px-3 py-1 rounded-lg">grow your business</span>.
+            That's the foundation. After that, we build the things that actually <span className="bg-accent text-white px-3 py-1 rounded-lg whitespace-nowrap">grow your business</span>.
           </p>
           <p className="text-lg md:text-xl text-dark/60 leading-relaxed mt-6">
             Prospect research. Market intelligence. The kind of work you'd love to do but never get round to.
@@ -358,7 +358,7 @@ function Philosophy() {
           Most AI consultants sell you tools you don't need and projects that drag on for months.
         </p>
         <h2 className="phil-text text-4xl md:text-7xl font-sans font-bold tracking-tighter leading-tight">
-          You work with <span className="bg-accent text-white px-3 py-1 rounded-lg">the person who builds it.</span>
+          You work with <span className="bg-accent text-white px-3 py-1 rounded-lg whitespace-nowrap">the person who builds it.</span>
         </h2>
         <div className="phil-text flex flex-col gap-8 max-w-2xl text-left">
           <div>
