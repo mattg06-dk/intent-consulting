@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { ArrowRight, Check, MessageCircle, Map, Wrench, Handshake } from 'lucide-react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import Privacy from './pages/Privacy.jsx';
+import Terms from './pages/Terms.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +42,7 @@ function Navbar() {
           <a href="#philosophy" className="hover:opacity-100 transition-opacity">Our approach</a>
           <a href="#protocol" className="hover:opacity-100 transition-opacity">How it works</a>
         </div>
-        <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" className={cn(
+        <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free call" className={cn(
           "magnetic-btn text-sm font-semibold px-5 py-2 rounded-full",
           scrolled ? "bg-accent text-white" : "bg-dark text-white"
         )}>
@@ -83,7 +86,7 @@ function Hero() {
           We look at how you actually work, find the things that are eating your time, and set up AI that handles them for you.
         </p>
         <div ref={btnRef} className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-accent text-white px-8 py-4 rounded-full flex items-center gap-3">
+          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free call" className="magnetic-btn bg-accent text-white px-8 py-4 rounded-full flex items-center gap-3">
             <span className="font-semibold">Book a free call</span>
             <ArrowRight size={18} />
           </a>
@@ -336,9 +339,14 @@ function Philosophy() {
 
   return (
     <section id="philosophy" ref={philRef} className="relative py-32 px-6 overflow-hidden bg-dark text-white">
-      <div className="absolute inset-0 opacity-10">
-        <img src="https://images.unsplash.com/photo-1541888056260-247f9e830e23?q=80&w=2940&auto=format&fit=crop" alt="Texture" className="w-full h-full object-cover" />
-      </div>
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '200px 200px',
+        }}
+      />
       
       <div ref={textContainerRef} className="relative z-10 max-w-4xl mx-auto flex flex-col items-start gap-12">
         <p className="phil-text text-xl md:text-2xl font-mono text-white/50 tracking-tight max-w-2xl">
@@ -407,12 +415,12 @@ function Protocol() {
     <section id="protocol" ref={containerRef} className="bg-primary/30 relative">
       <div className="max-w-5xl mx-auto px-6 py-24">
         <h2 className="text-sm font-mono tracking-widest uppercase mb-12 text-center text-dark/60">How it works</h2>
-        <div className="flex flex-col gap-32 pb-32">
+        <div className="flex flex-col gap-20 pb-20">
           {steps.map((step, i) => (
             <div 
               key={i}
               ref={el => cardsRef.current[i] = el}
-              className="sticky top-[15vh] w-full min-h-[60vh] bg-surface rounded-[3rem] p-10 md:p-16 border border-dark/5 shadow-xl flex flex-col justify-between overflow-hidden"
+              className="sticky top-[15vh] w-full min-h-[35vh] bg-surface rounded-[3rem] p-10 md:p-16 border border-dark/5 shadow-xl flex flex-col justify-between overflow-hidden"
             >
               <div className="flex justify-between items-start">
                 <span className="font-mono text-5xl md:text-7xl text-dark/10 font-light tracking-tighter">{step.num}</span>
@@ -421,7 +429,7 @@ function Protocol() {
                 </div>
               </div>
               
-              <div className="mt-24 md:mt-32 max-w-2xl text-dark">
+              <div className="mt-10 md:mt-14 max-w-2xl text-dark">
                 <h3 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">{step.title}</h3>
                 <p className="text-lg md:text-xl font-sans opacity-70 leading-relaxed">{step.desc}</p>
               </div>
@@ -448,11 +456,11 @@ function GetStarted() {
           No pitch deck, no pressure. Just a straight conversation about your business and whether we can help. If we can't, we'll tell you.
         </p>
         <div className="flex flex-col items-center gap-4">
-          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" className="magnetic-btn bg-dark text-white text-lg font-medium px-10 py-5 rounded-full inline-flex items-center gap-4">
+          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free call" className="magnetic-btn bg-dark text-white text-lg font-medium px-10 py-5 rounded-full inline-flex items-center gap-4">
             <span>Book a free call</span>
             <ArrowRight size={20} />
           </a>
-          <a href="mailto:matt@intentconsulting.ai" className="text-sm text-dark/40 hover:text-dark/60 transition-colors underline underline-offset-4">
+          <a href="mailto:matt@intentconsulting.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-dark/40 hover:text-dark/60 transition-colors underline underline-offset-4">
             or just drop us a message
           </a>
         </div>
@@ -479,12 +487,13 @@ function Footer() {
           <div className="flex flex-col gap-4 text-sm font-medium">
             <h5 className="text-white/30 font-mono tracking-widest text-xs uppercase mb-2">Explore</h5>
             <a href="#features" className="hover:text-accent transition-colors">What we do</a>
+            <a href="#philosophy" className="hover:text-accent transition-colors">Our approach</a>
             <a href="#protocol" className="hover:text-accent transition-colors">How it works</a>
           </div>
           <div className="flex flex-col gap-4 text-sm font-medium">
             <h5 className="text-white/30 font-mono tracking-widest text-xs uppercase mb-2">Legal</h5>
-            <a href="#" className="hover:text-accent transition-colors">Privacy</a>
-            <a href="#" className="hover:text-accent transition-colors">Terms</a>
+            <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-accent transition-colors">Terms</Link>
           </div>
         </div>
       </div>
@@ -501,18 +510,62 @@ function Footer() {
 }
 
 // ----------------------
+// H. TESTIMONIALS
+// ----------------------
+function Testimonials() {
+  return (
+    <section className="py-24 px-6 md:px-16 bg-background">
+      <div className="max-w-5xl mx-auto">
+        <p className="text-sm font-mono tracking-widest uppercase text-dark/40 text-center mb-12">What clients say</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-surface rounded-[2rem] p-8 md:p-10 border border-dark/5 shadow-sm flex flex-col gap-6">
+            <p className="text-dark/80 text-lg leading-relaxed">
+              "Matt helped us cut three hours of admin work every week. It's not something we'd have set up ourselves, but it just runs now."
+            </p>
+            <div>
+              <p className="text-sm font-semibold text-dark">Business owner</p>
+              <p className="text-sm text-dark/40">Independent estate agency</p>
+            </div>
+          </div>
+          <div className="bg-surface rounded-[2rem] p-8 md:p-10 border border-dark/5 shadow-sm flex flex-col gap-6">
+            <p className="text-dark/80 text-lg leading-relaxed">
+              "We were sceptical about AI at first. But the approach was practical, not salesy. We got one thing that works rather than ten things to manage."
+            </p>
+            <div>
+              <p className="text-sm font-semibold text-dark">Director</p>
+              <p className="text-sm text-dark/40">Small professional services firm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ----------------------
 // MAIN APP COMPONENT
 // ----------------------
-export default function App() {
+function HomePage() {
   return (
     <main className="font-sans antialiased text-dark bg-background">
       <Navbar />
       <Hero />
       <Features />
+      <Testimonials />
       <Philosophy />
       <Protocol />
       <GetStarted />
       <Footer />
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
+    </Routes>
   );
 }
