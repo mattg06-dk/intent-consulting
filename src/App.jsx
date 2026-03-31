@@ -21,6 +21,7 @@ function cn(...inputs) {
 // ----------------------
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -28,29 +29,60 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { href: '#features', label: 'What we do' },
+    { href: '#philosophy', label: 'Our approach' },
+    { href: '#protocol', label: 'How it works' },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-center mt-6 px-4 pointer-events-none">
-      <div 
+    <nav className="fixed top-0 left-0 w-full z-50 flex flex-col items-center mt-6 px-4 pointer-events-none">
+      <div
         className={cn(
           "pointer-events-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-700 w-full max-w-4xl",
-          scrolled 
-            ? "bg-surface/80 backdrop-blur-xl border border-dark/10 shadow-sm text-dark" 
+          scrolled
+            ? "bg-surface/80 backdrop-blur-xl border border-dark/10 shadow-sm text-dark"
             : "bg-transparent text-dark border border-transparent"
         )}
       >
         <span className="font-sans font-bold text-lg tracking-tighter">Intent.</span>
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium opacity-80">
-          <a href="#features" className="hover:opacity-100 transition-opacity">What we do</a>
-          <a href="#philosophy" className="hover:opacity-100 transition-opacity">Our approach</a>
-          <a href="#protocol" className="hover:opacity-100 transition-opacity">How it works</a>
+          {navLinks.map(({ href, label }) => (
+            <a key={href} href={href} className="hover:text-accent transition-colors">{label}</a>
+          ))}
         </div>
-        <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free call" className={cn(
-          "magnetic-btn text-sm font-semibold px-5 py-2 rounded-full",
-          scrolled ? "bg-accent text-white" : "bg-dark text-white"
-        )}>
-          <span>Book a free call</span>
-        </a>
+        <div className="flex items-center gap-3">
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen(o => !o)}
+          >
+            <span className={cn("block h-0.5 w-5 bg-current transition-all duration-300 origin-center", menuOpen && "rotate-45 translate-y-2")} />
+            <span className={cn("block h-0.5 w-5 bg-current transition-all duration-300", menuOpen && "opacity-0")} />
+            <span className={cn("block h-0.5 w-5 bg-current transition-all duration-300 origin-center", menuOpen && "-rotate-45 -translate-y-2")} />
+          </button>
+          <a href="https://calendly.com/intentconsulting/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a free call" className={cn(
+            "magnetic-btn text-sm font-semibold px-5 py-2 rounded-full",
+            scrolled ? "bg-accent text-white" : "bg-dark text-white"
+          )}>
+            <span>Book a free call</span>
+          </a>
+        </div>
       </div>
+      {menuOpen && (
+        <div className="pointer-events-auto mt-2 w-full max-w-4xl bg-surface/80 backdrop-blur-xl rounded-2xl border border-dark/10 shadow-sm text-dark">
+          {navLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center px-6 text-sm font-medium opacity-80 hover:text-accent hover:opacity-100 transition-colors min-h-[44px]"
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
