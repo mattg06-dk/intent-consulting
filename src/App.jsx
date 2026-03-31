@@ -106,9 +106,9 @@ function Hero() {
 // ----------------------
 function ToolChecklist() {
   const items = [
-    { title: 'Business overview', desc: 'What you need to know, without digging for it.' },
-    { title: 'Live numbers', desc: 'Always up to date. No spreadsheet wrangling.' },
-    { title: 'Automatic reminders', desc: 'Follow-ups and check-ins that happen on their own.' }
+    { title: 'Reporting dashboard', desc: 'Your numbers pulled together in one place, updated automatically.' },
+    { title: 'Live data from your tools', desc: 'Connected to your CRM, accounting software, booking system.' },
+    { title: 'Automated follow-ups', desc: 'Reminders, check-ins, and chase-ups that run on their own.' }
   ];
   const [active, setActive] = useState(0);
 
@@ -192,7 +192,7 @@ function TelemetryTypewriter() {
     <div className="feature-card p-8 h-[380px] flex flex-col">
       <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Stop doing the same thing twice</h3>
-        <p className="text-sm text-dark/60">We automate the repetitive stuff so you don't have to.</p>
+        <p className="text-sm text-dark/60">Invoice reminders, lead follow-ups, data entry, appointment scheduling. If your team does it the same way every time, we automate it.</p>
       </div>
       <div className="mt-auto bg-primary/30 p-5 rounded-3xl h-36 border border-dark/5 flex flex-col justify-between">
         <div className="flex items-center gap-2 mb-2">
@@ -227,7 +227,7 @@ function WeekHighlighter() {
     <div className="feature-card p-8 h-[380px] flex flex-col">
       <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Find where you're losing time</h3>
-        <p className="text-sm text-dark/60">You're spending more time running the business than doing the work you're good at.</p>
+        <p className="text-sm text-dark/60">We map where your time actually goes and find the changes with the biggest payoff.</p>
       </div>
       <div className="mt-auto w-full border border-dark/5 rounded-3xl p-5 bg-primary/20">
         <div className="flex items-end justify-between gap-2 h-24 mb-3">
@@ -294,7 +294,7 @@ function Features() {
             What we actually do
           </h2>
           <p className="text-lg text-dark/60 leading-relaxed">
-            Every business is different. We start by understanding how yours actually runs — then we figure out where AI helps and where it doesn't.
+            Automating a mess just gives you a faster mess. We start by understanding how your business actually works, where your time goes, and what's getting in the way. Then we figure out what to fix, what to automate, and what to leave alone.
           </p>
         </div>
         
@@ -307,7 +307,7 @@ function Features() {
         <div className="feat-card mt-24 mb-12 max-w-3xl">
           <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
           <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
-            We'll show you what else AI can do — from <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">finding new clients</span> to <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">spotting opportunities</span> you didn't know were there.
+            Once you're not stuck in the day-to-day, we can set up AI that does more than save time. Systems that find prospects who match your ideal client. Monitoring that spots opportunities before your competitors do. Briefings that land in your inbox with the information you'd normally spend an afternoon pulling together. This is where AI starts earning its keep.
           </p>
         </div>
       </div>
