@@ -80,7 +80,7 @@ function Hero() {
 
   return (
     <section ref={heroRef} className="relative w-full pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-16 bg-background">
-      <div className="max-w-5xl mx-auto flex flex-col items-start space-y-6">
+      <div className="max-w-6xl mx-auto flex flex-col items-start space-y-6">
         <h1 ref={text1Ref} className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-dark max-w-3xl">
           You didn't start a business to spend your days on admin.
         </h1>
@@ -304,7 +304,7 @@ function Features() {
           <WeekHighlighter />
         </div>
 
-        <div className="feat-card mt-24 mb-12 text-center max-w-3xl mx-auto">
+        <div className="feat-card mt-24 mb-12 max-w-3xl">
           <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
           <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
             We'll show you what else AI can do — from <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">finding new clients</span> to <span className="bg-accent/15 text-accent px-3 py-1 rounded-lg">spotting opportunities</span> you didn't know were there.
