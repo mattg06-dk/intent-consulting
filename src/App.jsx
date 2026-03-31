@@ -307,7 +307,7 @@ function Features() {
         <div className="feat-card mt-24 mb-12 max-w-3xl mx-auto text-center">
           <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
           <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
-            Once you're not stuck in the day-to-day, we can set up AI that does more than save time. Systems that find prospects who match your ideal client. Monitoring that spots opportunities before your competitors do. Briefings that land in your inbox with the information you'd normally spend an afternoon pulling together. This is where AI starts earning its keep.
+            That's the foundation. After that, we build the things that <span className="bg-accent text-white px-3 py-1 rounded-lg">actually grow your business.</span> Prospect research. Market intelligence. The kind of work you'd love to do but never get round to.
           </p>
         </div>
       </div>
