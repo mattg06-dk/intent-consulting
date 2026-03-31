@@ -289,7 +289,7 @@ function Features() {
   return (
     <section id="features" ref={sectionRef} className="py-24 px-6 md:px-16 bg-background text-dark">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-16 max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">
             What we actually do
           </h2>
@@ -304,7 +304,7 @@ function Features() {
           <WeekHighlighter />
         </div>
 
-        <div className="feat-card mt-24 mb-12 max-w-3xl">
+        <div className="feat-card mt-24 mb-12 max-w-3xl mx-auto text-center">
           <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
           <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
             Once you're not stuck in the day-to-day, we can set up AI that does more than save time. Systems that find prospects who match your ideal client. Monitoring that spots opportunities before your competitors do. Briefings that land in your inbox with the information you'd normally spend an afternoon pulling together. This is where AI starts earning its keep.
@@ -350,7 +350,7 @@ function Philosophy() {
         }}
       />
       
-      <div ref={textContainerRef} className="relative z-10 max-w-4xl mx-auto flex flex-col items-start gap-12">
+      <div ref={textContainerRef} className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center gap-12">
         <p className="phil-text text-xl md:text-2xl font-mono text-white/50 tracking-tight max-w-2xl">
           Most AI consultants sell you tools you don't need and projects that drag on for months.
         </p>
@@ -358,7 +358,7 @@ function Philosophy() {
           <span className="bg-accent text-white px-3 py-1 rounded-lg">You work with a person,</span> <br />
           <span className="font-serif text-accent font-normal px-4 py-3">not a platform.</span>
         </h2>
-        <div className="phil-text flex flex-col gap-8 max-w-2xl">
+        <div className="phil-text flex flex-col gap-8 max-w-2xl text-left">
           <div>
             <h3 className="text-lg font-bold text-white mb-1">We speak human.</h3>
             <p className="text-white/50">No jargon, no buzzwords. We tell you what we'll do, in plain English, and then we do it.</p>
