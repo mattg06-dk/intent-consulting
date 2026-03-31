@@ -287,7 +287,7 @@ function Features() {
   return (
     <section id="features" ref={sectionRef} className="py-24 px-6 md:px-16 bg-background text-dark">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
+        <div className="mb-16 max-w-2xl">
           <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight mb-6">
             What we actually do
           </h2>
