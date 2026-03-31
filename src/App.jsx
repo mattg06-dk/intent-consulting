@@ -124,7 +124,7 @@ function Hero() {
             <span className="font-semibold">Book a free call</span>
             <ArrowRight size={18} />
           </a>
-          <a href="#features" className="text-sm font-medium text-dark/50 hover:text-dark transition-colors">
+          <a href="#features" className="text-sm font-medium text-dark/60 hover:text-dark transition-colors">
             See what we actually do ↓
           </a>
         </div>
@@ -339,7 +339,7 @@ function Features() {
         <div className="feat-card mt-24 mb-12 max-w-3xl mx-auto text-center">
           <p className="text-base md:text-lg font-mono text-dark/40 mb-4 tracking-tight">And once the basics are running?</p>
           <p className="text-3xl md:text-5xl font-sans font-bold tracking-tight leading-tight">
-            That's the foundation. After that, we build the things that actually <span className="bg-accent text-white px-3 py-0.5 rounded-lg whitespace-nowrap">grow your business.</span>
+            That's the foundation. After that, we build the things that actually <span className="bg-accent text-white px-3 py-0 rounded-lg whitespace-nowrap">grow your business.</span>
           </p>
           <p className="text-lg md:text-xl text-dark/60 leading-relaxed mt-6">
             Prospect research. Market intelligence. The kind of work you'd love to do but never get round to.
@@ -390,18 +390,18 @@ function Philosophy() {
           Most AI consultants sell you tools you don't need and projects that drag on for months.
         </p>
         <h2 className="phil-text text-4xl md:text-7xl font-sans font-bold tracking-tighter leading-tight">
-          You work with <span className="bg-accent text-white px-3 py-0.5 rounded-lg whitespace-nowrap">the person who builds it.</span>
+          You work with <span className="bg-accent text-white px-3 py-0 rounded-lg whitespace-nowrap">the person who builds it.</span>
         </h2>
-        <div className="phil-text flex flex-col gap-8 max-w-2xl text-left">
-          <div>
+        <div className="phil-text flex flex-col gap-0 max-w-2xl text-left">
+          <div className="pt-10">
             <h3 className="text-lg font-bold text-white mb-1">We speak human.</h3>
             <p className="text-white/50">No jargon, no buzzwords. We tell you what we'll do, in plain English, and then we do it.</p>
           </div>
-          <div>
+          <div className="pt-10 border-t border-white/10">
             <h3 className="text-lg font-bold text-white mb-1">We do the work.</h3>
             <p className="text-white/50">This isn't advice you have to implement yourself. We build it, set it up, and make sure it works.</p>
           </div>
-          <div>
+          <div className="pt-10 border-t border-white/10">
             <h3 className="text-lg font-bold text-white mb-1">We're honest about what AI can't do.</h3>
             <p className="text-white/50">If something doesn't need AI, we'll tell you. If a simpler solution exists, we'll suggest that instead.</p>
           </div>
@@ -496,7 +496,7 @@ function GetStarted() {
             <span>Book a free call</span>
             <ArrowRight size={20} />
           </a>
-          <a href="mailto:matt@intentconsulting.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-dark/40 hover:text-dark/60 transition-colors underline underline-offset-4">
+          <a href="mailto:matt@intentconsulting.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-dark/50 hover:text-dark/70 transition-colors underline underline-offset-4 font-medium">
             or just drop us a message
           </a>
         </div>
