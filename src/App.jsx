@@ -551,7 +551,6 @@ function HomePage() {
       <Navbar />
       <Hero />
       <Features />
-      <Testimonials />
       <Philosophy />
       <Protocol />
       <GetStarted />
