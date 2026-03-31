@@ -8,7 +8,9 @@ import { twMerge } from 'tailwind-merge';
 import Privacy from './pages/Privacy.jsx';
 import Terms from './pages/Terms.jsx';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
