@@ -153,7 +153,7 @@ function ToolChecklist() {
 
   return (
     <div className="feature-card p-8 h-[380px] flex flex-col">
-      <div>
+      <div className="mb-6">
         <h3 className="text-xl heading-sans mb-1 text-dark">Know how your business is doing</h3>
         <p className="text-sm text-dark/60">Without pulling it all together yourself every month.</p>
       </div>
