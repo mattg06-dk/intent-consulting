@@ -152,12 +152,12 @@ function ToolChecklist() {
   }, [items.length]);
 
   return (
-    <div className="feature-card p-8 h-[380px] flex flex-col">
-      <div className="mb-6">
+    <div className="feature-card p-8 min-h-[380px] flex flex-col">
+      <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Know how your business is doing</h3>
         <p className="text-sm text-dark/60">Without pulling it all together yourself every month.</p>
       </div>
-      <div className="mt-auto flex flex-col gap-3">
+      <div className="mt-3 flex flex-col gap-3">
         {items.map((item, i) => (
           <div
             key={i}
@@ -221,7 +221,7 @@ function TelemetryTypewriter() {
   }, [text, isDeleting, msgIdx, messages]);
 
   return (
-    <div className="feature-card p-8 h-[380px] flex flex-col">
+    <div className="feature-card p-8 min-h-[380px] flex flex-col">
       <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Stop doing the same thing twice</h3>
         <p className="text-sm text-dark/60">Invoice reminders, lead follow-ups, data entry, appointment scheduling. If your team does it the same way every time, we automate it.</p>
@@ -256,7 +256,7 @@ function WeekHighlighter() {
   }, []);
 
   return (
-    <div className="feature-card p-8 h-[380px] flex flex-col">
+    <div className="feature-card p-8 min-h-[380px] flex flex-col">
       <div>
         <h3 className="text-xl heading-sans mb-1 text-dark">Find where you're losing time</h3>
         <p className="text-sm text-dark/60">We map where your time actually goes and find the changes with the biggest payoff.</p>
